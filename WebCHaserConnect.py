@@ -36,6 +36,7 @@ class Client:
     self.wait_for_ready()
     return self.send({"action": "getready"})["response"]["data"]
 
+  #walk
   def walkUp(self):
     return self.send({"action": "walkup"})["response"]["data"]
 
@@ -48,10 +49,51 @@ class Client:
   def walkLeft(self):
     return self.send({"action": "walkleft"})["response"]["data"]
 
+  #look
+  def lookUp(self):
+    return self.send({"action": "lookup"})["response"]["data"]
+
+  def lookRight(self):
+    return self.send({"action": "lookright"})["response"]["data"]
+  
+  def lookDown(self):
+    return self.send({"action": "lookdown"})["response"]["data"]
+  
+  def lookLeft(self):
+    return self.send({"action": "lookleft"})["response"]["data"]
+
+  #search
+  def searchUp(self):
+    return self.send({"action": "searchup"})["response"]["data"]
+  
+  def searchRight(self):
+    return self.send({"action": "searchright"})["response"]["data"]
+  
+  def searchDown(self):
+    return self.send({"action": "searchdown"})["response"]["data"]
+  
+  def searchLeft(self):
+    return self.send({"action": "searchleft"})["response"]["data"]
+
+  #put
+  def putUp(self):
+    return self.send({"action": "putup"})["response"]["data"]
+  
+  def putRight(self):
+    return self.send({"action": "putright"})["response"]["data"]
+  
+  def putDown(self):
+    return self.send({"action": "putdown"})["response"]["data"]
+  
+  def putLeft(self):
+    return self.send({"action": "putleft"})["response"]["data"]
+
+  #ready callback
   def ready(self, _payload):
     print(_payload)
     self.is_ready = True
 
+  #wait ready callback
   def wait_for_ready(self):
     while not self.is_ready:
       pass
