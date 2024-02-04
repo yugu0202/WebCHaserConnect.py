@@ -12,7 +12,7 @@ class Client:
     self.name = name
     self.is_ready = False
 
-    self.socket = phxsocket.Client(f"ws://{self.host}:{self.port}/client/websocket", {"token": self.token})
+    self.socket = phxsocket.Client(f"wss://{self.host}:{self.port}/client/websocket", {"token": self.token})
     if self.socket.connect():
       self.channel = self.socket.channel(f"match:{self.subtopic}")
       resp = self.channel.join()
