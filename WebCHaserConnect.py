@@ -4,9 +4,9 @@ import signal
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 class Client:
-  def __init__(self, name, host=None, port=None):
+  def __init__(self, name, host=None, port=443):
     self.host = host if host else input("接続先IPアドレスを入力してください: ")
-    self.port = port if port else input("接続先ポート番号を入力してください: ")
+    self.port = port
     self.token = input("トークンを入力してください: ")
     self.subtopic = input("サブトピックを入力してください: ")
     self.name = name
