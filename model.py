@@ -1,7 +1,7 @@
 import random
 import WebCHaserConnect
 
-client = WebCHaserConnect.Client("test",host="localhost", port=4000, secure=False)
+client = WebCHaserConnect.Client("test")
 direction = 0
 before_move = None
 
